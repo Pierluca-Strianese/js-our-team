@@ -55,6 +55,7 @@ function printTeamMemberHTML (arr, eleContainer) {
     eleContainer.innerHTML = '';
     for (let i = 0; i < arr.length; i++) {
         let employee = arr[i];
-        eleContainer.innerHTML += `<li>${employee.Name}, ${employee.Posizion}, ${employee.Photo}</li>`;
+        eleContainer.innerHTML += `<li>${employee.Name}, ${employee.Posizion}</li>`;
+        eleContainer.innerHTML += `<img src="img/${employee.Photo}" alt=""></img>`;
     }
 }
