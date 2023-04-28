@@ -37,7 +37,10 @@ const Team = [
 	
 ];
 
-printTeamMember(Team);
+const eleList = document.querySelector('#employee-list');
+
+
+printTeamMemberHTML(Team, eleList);
 
 function printTeamMember (arr) {
     for (let i = 0; i < arr.length; i++) {
@@ -45,5 +48,13 @@ function printTeamMember (arr) {
         console.log(employee.Name);
         console.log(employee.Posizion);
         console.log(employee.Photo);
+    }
+}
+
+function printTeamMemberHTML (arr, eleContainer) {
+    eleContainer.innerHTML = '';
+    for (let i = 0; i < arr.length; i++) {
+        let employee = arr[i];
+        eleContainer.innerHTML += `<li>${employee.Name}, ${employee.Posizion}, ${employee.Photo}</li>`;
     }
 }
