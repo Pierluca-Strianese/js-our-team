@@ -37,7 +37,7 @@ const Team = [
 	
 ];
 
-const eleList = document.querySelector('#employee-list');
+const eleList = document.querySelector('.big-container');
 
 
 printTeamMemberHTML(Team, eleList);
@@ -55,7 +55,11 @@ function printTeamMemberHTML (arr, eleContainer) {
     eleContainer.innerHTML = '';
     for (let i = 0; i < arr.length; i++) {
         let employee = arr[i];
-        eleContainer.innerHTML += `<li>${employee.Name}, ${employee.Posizion}</li>`;
-        eleContainer.innerHTML += `<img src="img/${employee.Photo}" alt=""></img>`;
+        eleContainer.innerHTML += 
+            `<div class="container">
+                <img src="img/${employee.Photo}" alt=""></img>
+                <div class="name"> ${employee.Name} </div>
+                <div class="posizion"> ${employee.Posizion} </div>
+            </div> `
     }
 }
